@@ -1,0 +1,51 @@
+C:\Users\Luciano\AppData\Local\Temporary Projects\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\bin\Debug\Desktop.xml
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.Form1.resources
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.Resources.resources
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.vbproj.GenerateResource.Cache
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.xml
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.Fundo.resources
+C:\Users\Luciano\Documents\Visual Studio 2012\Projects\Desktop\Desktop\obj\Debug\Desktop.Tamanho.resources
+C:\Projetos\xSSVP\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.xml
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Projetos\xSSVP\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Projetos\xSSVP\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Projetos\xSSVP\Desktop\Desktop\bin\Debug\Desktop.xml
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.Tamanho.resources
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.frmDeskTop.resources
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.Fundo.resources
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.Resources.resources
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.vbproj.GenerateResource.Cache
+C:\Projetos\xSSVP\Desktop\Desktop\obj\Debug\Desktop.LoginForm.resources
+C:\Fontes\SSVP_Template\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Fontes\SSVP_Template\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Fontes\SSVP_Template\Desktop\Desktop\obj\Debug\Desktop.xml
+C:\Fontes\SSVP_Template\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.xml
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\bin\Debug\Desktop.xml
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.LoginForm.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.Resources.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.vbproj.GenerateResource.Cache
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmAcessos.resources
+C:\fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmConfiguracao.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmBrowse.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmUsuario.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.mdiDesktop.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmArrangeIcon.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.Parametros.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmAltSenha.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmGrupo.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.frmMural.resources
+C:\Fontes\SSVP_Projeto\Desktop\Desktop\obj\Debug\Desktop.dlgColaborador.resources
