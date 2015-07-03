@@ -46,7 +46,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Logo SSVP.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Logo SSVP.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -73,66 +73,72 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassCrypt.vb" />
-    <Compile Include="classLoadListView.vb" />
-    <Compile Include="dlgColaborador.designer.vb">
+    <Compile Include="Class\ClassCrypt.vb" />
+    <Compile Include="Class\classLoadListView.vb" />
+    <Compile Include="Dialog\dlgColaborador.designer.vb">
       <DependentUpon>dlgColaborador.vb</DependentUpon>
     </Compile>
-    <Compile Include="dlgColaborador.vb">
+    <Compile Include="Dialog\dlgColaborador.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAcessos.Designer.vb">
+    <Compile Include="Form\frmAcessos.Designer.vb">
       <DependentUpon>frmAcessos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAcessos.vb">
+    <Compile Include="Form\frmAcessos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAltSenha.Designer.vb">
+    <Compile Include="Form\frmAltSenha.Designer.vb">
       <DependentUpon>frmAltSenha.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAltSenha.vb">
+    <Compile Include="Form\frmAltSenha.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmArrangeIcon.Designer.vb">
+    <Compile Include="Form\frmArrangeIcon.Designer.vb">
       <DependentUpon>frmArrangeIcon.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmArrangeIcon.vb">
+    <Compile Include="Form\frmArrangeIcon.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBrowse.Designer.vb">
+    <Compile Include="Form\frmBrowse.Designer.vb">
       <DependentUpon>frmBrowse.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmBrowse.vb">
+    <Compile Include="Form\frmBrowse.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConfiguracao.Designer.vb">
+    <Compile Include="Form\frmConfiguracao.Designer.vb">
       <DependentUpon>frmConfiguracao.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConfiguracao.vb">
+    <Compile Include="Form\frmConfiguracao.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGrupo.Designer.vb">
+    <Compile Include="Form\frmGrupo.Designer.vb">
       <DependentUpon>frmGrupo.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmGrupo.vb">
+    <Compile Include="Form\frmGrupo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMural.Designer.vb">
+    <Compile Include="Form\frmMural.Designer.vb">
       <DependentUpon>frmMural.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMural.vb">
+    <Compile Include="Form\frmMural.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuario.Designer.vb">
+    <Compile Include="Form\frmSobre.designer.vb">
+      <DependentUpon>frmSobre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSobre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmUsuario.Designer.vb">
       <DependentUpon>frmUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuario.vb">
+    <Compile Include="Form\frmUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm1.Designer.vb">
+    <Compile Include="Form\LoginForm1.Designer.vb">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm1.vb">
+    <Compile Include="Form\LoginForm1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdiDesktop.Designer.vb">
@@ -141,7 +147,7 @@
     <Compile Include="mdiDesktop.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModPrincipal.vb" />
+    <Compile Include="Module\ModPrincipal.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,42 +163,45 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Parametros.designer.vb">
+    <Compile Include="Form\Parametros.designer.vb">
       <DependentUpon>Parametros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Parametros.vb">
+    <Compile Include="Form\Parametros.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="dlgColaborador.resx">
+    <EmbeddedResource Include="Dialog\dlgColaborador.resx">
       <DependentUpon>dlgColaborador.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAcessos.resx">
+    <EmbeddedResource Include="Form\frmAcessos.resx">
       <DependentUpon>frmAcessos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAltSenha.resx">
+    <EmbeddedResource Include="Form\frmAltSenha.resx">
       <DependentUpon>frmAltSenha.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmArrangeIcon.resx">
+    <EmbeddedResource Include="Form\frmArrangeIcon.resx">
       <DependentUpon>frmArrangeIcon.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBrowse.resx">
+    <EmbeddedResource Include="Form\frmBrowse.resx">
       <DependentUpon>frmBrowse.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConfiguracao.resx">
+    <EmbeddedResource Include="Form\frmConfiguracao.resx">
       <DependentUpon>frmConfiguracao.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGrupo.resx">
+    <EmbeddedResource Include="Form\frmGrupo.resx">
       <DependentUpon>frmGrupo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMural.resx">
+    <EmbeddedResource Include="Form\frmMural.resx">
       <DependentUpon>frmMural.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuario.resx">
+    <EmbeddedResource Include="Form\frmSobre.resx">
+      <DependentUpon>frmSobre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmUsuario.resx">
       <DependentUpon>frmUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm1.resx">
+    <EmbeddedResource Include="Form\LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mdiDesktop.resx">
@@ -204,7 +213,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Parametros.resx">
+    <EmbeddedResource Include="Form\Parametros.resx">
       <DependentUpon>Parametros.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -220,11 +229,12 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Logo SSVP.ico" />
+    <Content Include="Resources\Logo SSVP.ico" />
+    <None Include="Resources\Logo SSVP.png" />
+    <None Include="Resources\AllDay.ru_Search.png" />
+    <None Include="Resources\Associado.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

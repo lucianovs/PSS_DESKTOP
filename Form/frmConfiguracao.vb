@@ -120,13 +120,13 @@
                 nudLin.Value = CalcularLinha(mdiDesktop.btnUnidades.Location.Y)
                 cbModulo.Text = "Unidades"
             End If
-            If .btnColaboradores.Visible Then
-                btnColaboradores.Visible = True
-                cbModulo.Items.Add("Colaboradores")
+            If .btnAssociados.Visible Then
+                btnAssociados.Visible = True
+                cbModulo.Items.Add("Associados")
 
-                nudCol.Value = CalcularColuna(mdiDesktop.btnColaboradores.Location.X)
-                nudLin.Value = CalcularLinha(mdiDesktop.btnColaboradores.Location.Y)
-                cbModulo.Text = "Colaboradores"
+                nudCol.Value = CalcularColuna(mdiDesktop.btnAssociados.Location.X)
+                nudLin.Value = CalcularLinha(mdiDesktop.btnAssociados.Location.Y)
+                cbModulo.Text = "Associados"
             End If
             If .btnControle_de_Despesas.Visible Then
                 btnControle_de_Despesas.Visible = True
@@ -323,10 +323,10 @@
                         nQtdIcon_pos = VerQtdIcon_Posicao(Int(nudCol.Value), Int(nudLin.Value), "btnUnidades")
                         btnUnidades.Location = New System.Drawing.Point(CDbl(ColGrade(Int(nudCol.Value)) + nQtdIcon_pos * 5), CDbl(LinGrade(Int(nudLin.Value)) + nQtdIcon_pos * 5))
                         mdiDesktop.btnUnidades.Location = New System.Drawing.Point(CDbl(CalcularX(nudCol.Value)), CDbl(CalcularY(nudLin.Value)))
-                    Case Is = "Colaboradores"
-                        nQtdIcon_pos = VerQtdIcon_Posicao(Int(nudCol.Value), Int(nudLin.Value), "btnColaboradores")
-                        btnColaboradores.Location = New System.Drawing.Point(CDbl(ColGrade(Int(nudCol.Value)) + nQtdIcon_pos * 5), CDbl(LinGrade(Int(nudLin.Value)) + nQtdIcon_pos * 5))
-                        mdiDesktop.btnColaboradores.Location = New System.Drawing.Point(CDbl(CalcularX(Int(nudCol.Value))), CDbl(CalcularY(Int(nudLin.Value))))
+                    Case Is = "Associados"
+                        nQtdIcon_pos = VerQtdIcon_Posicao(Int(nudCol.Value), Int(nudLin.Value), "btnAssociados")
+                        btnAssociados.Location = New System.Drawing.Point(CDbl(ColGrade(Int(nudCol.Value)) + nQtdIcon_pos * 5), CDbl(LinGrade(Int(nudLin.Value)) + nQtdIcon_pos * 5))
+                        mdiDesktop.btnAssociados.Location = New System.Drawing.Point(CDbl(CalcularX(Int(nudCol.Value))), CDbl(CalcularY(Int(nudLin.Value))))
                     Case Is = "Controle de Despesas"
                         nQtdIcon_pos = VerQtdIcon_Posicao(Int(nudCol.Value), Int(nudLin.Value), "btnControle_de_Despesas")
                         btnControle_de_Despesas.Location = New System.Drawing.Point(CDbl(ColGrade(Int(nudCol.Value)) + nQtdIcon_pos * 5), CDbl(LinGrade(Int(nudLin.Value)) + nQtdIcon_pos * 5))
@@ -396,9 +396,9 @@
                     Case Is = "Unidades"
                         nudCol.Value = CalcularColuna(mdiDesktop.btnUnidades.Location.X)
                         nudLin.Value = CalcularLinha(mdiDesktop.btnUnidades.Location.Y)
-                    Case Is = "Colaboradores"
-                        nudCol.Value = CalcularColuna(mdiDesktop.btnColaboradores.Location.X)
-                        nudLin.Value = CalcularLinha(mdiDesktop.btnColaboradores.Location.Y)
+                    Case Is = "Associados"
+                        nudCol.Value = CalcularColuna(mdiDesktop.btnAssociados.Location.X)
+                        nudLin.Value = CalcularLinha(mdiDesktop.btnAssociados.Location.Y)
                     Case Is = "Controle de Despesas"
                         nudCol.Value = CalcularColuna(.btnControle_de_Despesas.Location.X)
                         nudLin.Value = CalcularLinha(.btnControle_de_Despesas.Location.Y)
@@ -450,9 +450,9 @@
             Case Is = "Unidades"
                 nudCol.Value = CalcularColuna(mdiDesktop.btnUnidades.Location.X)
                 nudLin.Value = CalcularLinha(mdiDesktop.btnUnidades.Location.Y)
-            Case Is = "Colaboradores"
-                nudCol.Value = CalcularColuna(mdiDesktop.btnColaboradores.Location.X)
-                nudLin.Value = CalcularLinha(mdiDesktop.btnColaboradores.Location.Y)
+            Case Is = "Associados"
+                nudCol.Value = CalcularColuna(mdiDesktop.btnAssociados.Location.X)
+                nudLin.Value = CalcularLinha(mdiDesktop.btnAssociados.Location.Y)
             Case Is = "Controle de Despesas"
                 nudCol.Value = CalcularColuna(mdiDesktop.btnControle_de_Despesas.Location.X)
                 nudLin.Value = CalcularLinha(mdiDesktop.btnControle_de_Despesas.Location.Y)
@@ -485,7 +485,7 @@
         Next
     End Function
 
-    Private Sub btnCompras_Click(sender As Object, e As EventArgs) Handles btnCompras.Click, btnControle_de_Despesas.Click, btnColaboradores.Click, btnUnidades.Click, btnContribuicoes.Click, btnTesouraria.Click, btnProtocolo.Click, btnPonto_de_Venda.Click, btnPlano_Financeiro.Click, btnControle_de_Boletins.Click, btnCenso.Click, btnContas_a_Pagar.Click, btnControle_de_Estoque.Click, btnObras_Unidas.Click
+    Private Sub btnCompras_Click(sender As Object, e As EventArgs) Handles btnCompras.Click, btnControle_de_Despesas.Click, btnAssociados.Click, btnUnidades.Click, btnContribuicoes.Click, btnTesouraria.Click, btnProtocolo.Click, btnPonto_de_Venda.Click, btnPlano_Financeiro.Click, btnControle_de_Boletins.Click, btnCenso.Click, btnContas_a_Pagar.Click, btnControle_de_Estoque.Click, btnObras_Unidas.Click
         Dim fButton As Button
 
         fButton = sender
@@ -517,8 +517,8 @@
             cbModulo.Text = "Controle de Estoque"
         ElseIf fButton.Name = "btnUnidades" Then
             cbModulo.Text = "Unidades"
-        ElseIf fButton.Name = "btnColaboradores" Then
-            cbModulo.Text = "Colaboradores"
+        ElseIf fButton.Name = "btnAssociados" Then
+            cbModulo.Text = "Associados"
         ElseIf fButton.Name = "btnControle_de_Despesas" Then
             cbModulo.Text = "Controle de Despesas"
         End If

@@ -22,7 +22,6 @@ Partial Class frmUsuario
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUsuario))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btnIncluir = New System.Windows.Forms.ToolStripButton()
@@ -55,11 +54,12 @@ Partial Class frmUsuario
         Me.dtpExpira = New System.Windows.Forms.DateTimePicker()
         Me.chkValidade = New System.Windows.Forms.CheckBox()
         Me.chkAlterarSenha = New System.Windows.Forms.CheckBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.chkGerAgr = New System.Windows.Forms.CheckBox()
         Me.lblColaborador = New System.Windows.Forms.Label()
         Me.txtColaborador = New System.Windows.Forms.TextBox()
         Me.btnLocColaborador = New System.Windows.Forms.Button()
+        Me.cbStaUsu = New System.Windows.Forms.ComboBox()
+        Me.lblStaUsu = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -344,11 +344,6 @@ Partial Class frmUsuario
         Me.chkAlterarSenha.Text = "Alterar a Senha no próximo login"
         Me.chkAlterarSenha.UseVisualStyleBackColor = True
         '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 200
-        '
         'chkGerAgr
         '
         Me.chkGerAgr.AutoSize = True
@@ -380,18 +375,40 @@ Partial Class frmUsuario
         '
         'btnLocColaborador
         '
+        Me.btnLocColaborador.BackgroundImage = Global.Desktop.My.Resources.Resources.AllDay_ru_Search
+        Me.btnLocColaborador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLocColaborador.Location = New System.Drawing.Point(477, 280)
         Me.btnLocColaborador.Name = "btnLocColaborador"
-        Me.btnLocColaborador.Size = New System.Drawing.Size(31, 22)
+        Me.btnLocColaborador.Size = New System.Drawing.Size(27, 23)
         Me.btnLocColaborador.TabIndex = 17
-        Me.btnLocColaborador.Text = "..."
         Me.btnLocColaborador.UseVisualStyleBackColor = True
+        '
+        'cbStaUsu
+        '
+        Me.cbStaUsu.FormattingEnabled = True
+        Me.cbStaUsu.Items.AddRange(New Object() {"ATIVO", "INATIVO", "EXCLUIDO"})
+        Me.cbStaUsu.Location = New System.Drawing.Point(342, 62)
+        Me.cbStaUsu.Name = "cbStaUsu"
+        Me.cbStaUsu.Size = New System.Drawing.Size(145, 24)
+        Me.cbStaUsu.TabIndex = 25
+        '
+        'lblStaUsu
+        '
+        Me.lblStaUsu.AutoSize = True
+        Me.lblStaUsu.Location = New System.Drawing.Point(339, 44)
+        Me.lblStaUsu.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblStaUsu.Name = "lblStaUsu"
+        Me.lblStaUsu.Size = New System.Drawing.Size(148, 17)
+        Me.lblStaUsu.TabIndex = 24
+        Me.lblStaUsu.Text = "Situação do Cadastro:"
         '
         'frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(759, 346)
+        Me.Controls.Add(Me.cbStaUsu)
+        Me.Controls.Add(Me.lblStaUsu)
         Me.Controls.Add(Me.btnLocColaborador)
         Me.Controls.Add(Me.txtColaborador)
         Me.Controls.Add(Me.lblColaborador)
@@ -457,9 +474,10 @@ Partial Class frmUsuario
     Friend WithEvents chkValidade As System.Windows.Forms.CheckBox
     Friend WithEvents chkAlterarSenha As System.Windows.Forms.CheckBox
     Private WithEvents dtpExpira As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents chkGerAgr As System.Windows.Forms.CheckBox
     Friend WithEvents lblColaborador As System.Windows.Forms.Label
     Friend WithEvents txtColaborador As System.Windows.Forms.TextBox
     Friend WithEvents btnLocColaborador As System.Windows.Forms.Button
+    Friend WithEvents cbStaUsu As System.Windows.Forms.ComboBox
+    Friend WithEvents lblStaUsu As System.Windows.Forms.Label
 End Class

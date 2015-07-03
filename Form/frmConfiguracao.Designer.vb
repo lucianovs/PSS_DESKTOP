@@ -57,7 +57,7 @@ Partial Class frmConfiguracao
         Me.btnObras_Unidas = New System.Windows.Forms.Button()
         Me.btnControle_de_Estoque = New System.Windows.Forms.Button()
         Me.btnUnidades = New System.Windows.Forms.Button()
-        Me.btnColaboradores = New System.Windows.Forms.Button()
+        Me.btnAssociados = New System.Windows.Forms.Button()
         Me.btnControle_de_Despesas = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -493,19 +493,19 @@ Partial Class frmConfiguracao
         Me.btnUnidades.UseVisualStyleBackColor = True
         Me.btnUnidades.Visible = False
         '
-        'btnColaboradores
+        'btnAssociados
         '
-        Me.btnColaboradores.AllowDrop = True
-        Me.btnColaboradores.BackgroundImage = CType(resources.GetObject("btnColaboradores.BackgroundImage"), System.Drawing.Image)
-        Me.btnColaboradores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnColaboradores.FlatAppearance.BorderSize = 0
-        Me.btnColaboradores.Location = New System.Drawing.Point(819, 92)
-        Me.btnColaboradores.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnColaboradores.Name = "btnColaboradores"
-        Me.btnColaboradores.Size = New System.Drawing.Size(108, 67)
-        Me.btnColaboradores.TabIndex = 48
-        Me.btnColaboradores.UseVisualStyleBackColor = True
-        Me.btnColaboradores.Visible = False
+        Me.btnAssociados.AllowDrop = True
+        Me.btnAssociados.BackgroundImage = Global.Desktop.My.Resources.Resources.Associado
+        Me.btnAssociados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnAssociados.FlatAppearance.BorderSize = 0
+        Me.btnAssociados.Location = New System.Drawing.Point(819, 92)
+        Me.btnAssociados.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAssociados.Name = "btnAssociados"
+        Me.btnAssociados.Size = New System.Drawing.Size(108, 67)
+        Me.btnAssociados.TabIndex = 48
+        Me.btnAssociados.UseVisualStyleBackColor = True
+        Me.btnAssociados.Visible = False
         '
         'btnControle_de_Despesas
         '
@@ -527,7 +527,7 @@ Partial Class frmConfiguracao
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1001, 420)
         Me.Controls.Add(Me.btnControle_de_Despesas)
-        Me.Controls.Add(Me.btnColaboradores)
+        Me.Controls.Add(Me.btnAssociados)
         Me.Controls.Add(Me.btnUnidades)
         Me.Controls.Add(Me.btnControle_de_Estoque)
         Me.Controls.Add(Me.btnObras_Unidas)
@@ -599,6 +599,6 @@ Partial Class frmConfiguracao
     Friend WithEvents btnObras_Unidas As System.Windows.Forms.Button
     Friend WithEvents btnControle_de_Estoque As System.Windows.Forms.Button
     Friend WithEvents btnUnidades As System.Windows.Forms.Button
-    Friend WithEvents btnColaboradores As System.Windows.Forms.Button
+    Friend WithEvents btnAssociados As System.Windows.Forms.Button
     Friend WithEvents btnControle_de_Despesas As System.Windows.Forms.Button
 End Class

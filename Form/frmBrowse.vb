@@ -38,13 +38,16 @@ Public Class frmBrowse
         Dim sTempValorCondicao As String
         Dim cmdInsert As OleDbCommand
 
+        g_AtuBrowse = False
+
         Dim dtSI902 As DataTable = New DataTable("ESI902")
         Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
 
         nCod_Login = getCodUsuario(ClassCrypt.Decrypt(g_Login)) 'CARREGAR O USUÁRIO LOGADO
         If nCod_Login = 1 Then
-            sJoin = ""
-            sWhere = ""
+            'HABILITADOR PARA FAZER COM QUE O ADMIN ACESSO TODOS OS REGISTROS
+            'sJoin = ""
+            'sWhere = ""
         End If
         'MsgBox(sJoin & " - " & sWhere)
         sFiltroInicial = classLoadListView.loadlistview(classEntidade, ListView_Browse, sJoin, sWhere, nBlocoReg)
@@ -139,8 +142,6 @@ Public Class frmBrowse
 
         Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 
-        ListView_Browse.Size = New Size(Me.Size.Width - 34, Me.Size.Height - 146) '112
-
     End Sub
 
     Private Function TrataCondicao(fFiltro As String) As String
@@ -194,22 +195,23 @@ Public Class frmBrowse
     End Sub
 
     Private Sub CarregarFormCadastro()
-        'Carregar o Formulário do Cadastro
-        Dim frmType As Type = Type.GetType(sModulo & "." & Formulario)
-        Dim frm As Object = Activator.CreateInstance(frmType)
 
-        CType(frm, Form).Tag = Me.Tag 'nível de acesso
-        CType(frm, Form).Text = "FORMULÁRIO - " & Me.Text
-        frmType.InvokeMember("Show", Reflection.BindingFlags.InvokeMethod, Nothing, frm, Nothing)
+        Try
+            'Carregar o Formulário do Cadastro
+            'Dim frmType As Type = Type.GetType(sModulo & "." & Formulario)
+            Dim frmType As Type = Type.GetType(Application.ProductName & "." & Formulario)
+            Dim frm As Object = Activator.CreateInstance(frmType)
+            CType(frm, Form).Tag = Me.Tag 'nível de acesso
+            CType(frm, Form).Text = "FORMULÁRIO - " & Me.Text
+            frmType.InvokeMember("Show", Reflection.BindingFlags.InvokeMethod, Nothing, frm, Nothing)
+            
+            timerRefresh.Enabled = True
 
-        timerRefresh.Enabled = True
+        Catch ex As Exception
+            MsgBox(ex.ToString())
+        Finally
 
-        'CType(frm, Form).MdiParent = mdiDesktop
-        'CType(frm, Form).Modal = True
-
-        'Cadastro_Form.MdiParent = mdiPrincipal
-        'Cadastro_Form.Tag = Me.Tag 'nível de acesso
-        'Cadastro_Form.Show()
+        End Try
     End Sub
 
     Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click, btnClear.Click
@@ -559,16 +561,6 @@ Public Class frmBrowse
 
     End Sub
 
-    Private Sub frmBrowse_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
-
-        ListView_Browse.Size = New Size(Me.Size.Width - 34, Me.Size.Height - 146) '112
-
-        btnAnterior.Location = New System.Drawing.Point(ListView_Browse.Size.Width - 245, ListView_Browse.Size.Height + 58)
-        lblRegistros.Location = New System.Drawing.Point(btnAnterior.Location.X + 62, btnAnterior.Location.Y + 3)
-        btnProximo.Location = New System.Drawing.Point(btnAnterior.Location.X + 188, btnAnterior.Location.Y)
-
-    End Sub
-
     Private Sub cbCampo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCampo.SelectedIndexChanged
         If Trim(cbCampo.Text) = "" Then
             cbCondicao.Text = ""
@@ -687,17 +679,21 @@ erro_comandos:
     Public Sub RefreshBrowse()
         If g_Comando = "REFRESH" Then
             g_Comando = ""
-            timerRefresh.Enabled = False
             sFiltroInicial = classLoadListView.loadlistview(classEntidade, ListView_Browse, sJoin, sWhere, nBlocoReg)
             Application.DoEvents()
             PosicionarListView(ListView_Browse)
             Call TratarPaginacao()
         End If
+        timerRefresh.Enabled = False
 
     End Sub
 
     Private Sub timerRefresh_Tick(sender As Object, e As EventArgs) Handles timerRefresh.Tick
-        Call RefreshBrowse()
+        If g_AtuBrowse Then
+            g_AtuBrowse = False
+            Call RefreshBrowse()
+        End If
+
     End Sub
 
     Private Sub txtValorCondicao_KeyDown(sender As Object, e As KeyEventArgs) Handles txtValorCondicao.KeyDown

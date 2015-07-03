@@ -1,4 +1,5 @@
-﻿Imports System.Windows.Forms
+﻿Imports Microsoft.VisualBasic.Interaction
+Imports System.Windows.Forms
 Imports System.Net
 Imports System.Net.NetworkInformation
 Imports System.IO
@@ -195,8 +196,15 @@ ProcessoInicial:
     End Sub
 
     Private Sub menu_CadastroDeUsuarios_Click(sender As Object, e As EventArgs) Handles menuUsuarios.Click
-        '?? Alterar os parâmetros para passar ao Browse (Entudade e Form. do Cadastro) ??
-        Dim frmBrowse_Usuario As frmBrowse = New frmBrowse("ESI000", "frmUsuario")
+        '?? Alterar os parâmetros para passar ao Browse (Entidade e Form. do Cadastro) ??
+        Dim sWhere As String = "SI000_STAUSU<>'E'"
+        Dim nCodigoUsu As Integer = getCodUsuario(ClassCrypt.Decrypt(g_Login))
+
+        If Not UsuarioAdministrador(nCodigoUsu) Then
+            sWhere += " and SI000_CODUSU=" & nCodigoUsu.ToString
+        End If
+
+        Dim frmBrowse_Usuario As frmBrowse = New frmBrowse("ESI000", "frmUsuario", , sWhere)
 
         'frmBrowse_Usuario.MdiParent = Me
         frmBrowse_Usuario.Tag = menuUsuarios.Tag 'é gravado no tag do menu o nível de acesso
@@ -321,7 +329,7 @@ ProcessoInicial:
 
     End Sub
 
-    Private Sub btnUnidades_Click(sender As Object, e As EventArgs) Handles btnUnidades.Click, btnCenso.Click, btnColaboradores.Click
+    Private Sub btnUnidades_Click(sender As Object, e As EventArgs) Handles btnUnidades.Click, btnCenso.Click, btnAssociados.Click
         Dim myprocesses As Process()
 
         ObjAux = New Button()
@@ -333,12 +341,16 @@ ProcessoInicial:
         'O Programa a ser executado, o Nome do Objeto sem o "btn" inicial Ex.: btnUnidades (Unidades.exe)
         Dim sModulo As String = Microsoft.VisualBasic.Right(ObjAux.Name, Microsoft.VisualBasic.Len(ObjAux.Name) - 3)
 
-        s = Application.StartupPath & "\" & sModulo & ".exe"
-        If Not Dir(s) = "" Then
+        s = Application.StartupPath & "\" & UCase(sModulo) & ".EXE"
+        If My.Computer.FileSystem.FileExists(s) Then
+            'If Not Dir(s) = "" Then
             'Verificar se o Programa está aberto
             myprocesses = Process.GetProcessesByName(sModulo)
             If myprocesses.Length = 0 Then
-                Shell(s & " -" & g_Login & "-", , True, 1000)
+                'Process.Start(s & " -" & g_Login & "-")
+                s = """" & s & """ -" & g_Login & "-"
+                Shell(s, , True, 1000)
+                'Shell(sModulo & ".exe -" & g_Login & "-", , True, 1000)
             Else
                 MsgBox("Este módulo se encontra aberto no sistema!!")
             End If
@@ -391,7 +403,7 @@ ProcessoInicial:
 
             oFileInfoCollectionLocal = DirLocal.GetFiles("*.exe")
 
-            'Verificar se tem atualização
+            'Ler cada arquivo exe do diretório do Servidor
             For i = 0 To oFileInfoCollectionLocal.Length() - 1
                 oFileInfoLocal = oFileInfoCollectionLocal.GetValue(i)
                 'Verificar se é o arquivo vshot (tem dois pontos)
@@ -446,7 +458,6 @@ ProcessoInicial:
                                 oFileInfoServer = oFileInfoCollectionServer.GetValue(j)
                                 'MsgBox(oFileInfoServer.DirectoryName & "\" & oFileInfoServer.Name & " -> " & Application.StartupPath & "\" & oFileInfoServer.Name)
                                 System.IO.File.Copy(oFileInfoServer.DirectoryName & "\" & oFileInfoServer.Name, Application.StartupPath & "\" & oFileInfoServer.Name, True)
-
                             Next
                             'Else
                             'MsgBox("Não Atualizar")
@@ -454,12 +465,130 @@ ProcessoInicial:
                     End If
                 End If
             Next
-        End If
 
+            'Atualizar os manuais do usuário
+            oFileInfoCollectionLocal = DirLocal.GetFiles("*.pdf")
+            'Ler cada arquivo RPT do diretório do Servidor
+            For i = 0 To oFileInfoCollectionLocal.Length() - 1
+                oFileInfoLocal = oFileInfoCollectionLocal.GetValue(i)
+                'Ler o Arquivo no servidor
+                oFileInfoCollectionServer = DirServer.GetFiles(oFileInfoLocal.Name)
+                If oFileInfoCollectionServer.Length() > 0 Then 'Verificar se foi encontrado
+                    oFileInfoServer = oFileInfoCollectionServer.GetValue(0)
+
+                    'Comparar a data de criação
+                    If oFileInfoServer.LastWriteTime <> oFileInfoLocal.LastWriteTime Then
+                        If Not bUpdate Then
+                            bUpdate = MsgBox("Deseja atualizar o sistema da SSVP agora?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = vbYes
+                            If Not bUpdate Then
+                                Exit Sub
+                            End If
+                        End If
+
+                        'Atualizar Arquivos
+                        'Separar o nome do arquivo, sem extensão
+                        nPos = InStr(1, oFileInfoLocal.Name, ".", vbTextCompare)
+                        sFileName = Microsoft.VisualBasic.Left(oFileInfoLocal.Name, nPos - 1)
+
+                        'Ler os Arquivos do módulo no servidor
+                        oFileInfoCollectionServer = DirServer.GetFiles(sFileName & "*.*")
+
+                        'carregar o Painel de Acompanhamento
+                        grpBoxUpdate.Visible = True
+
+                        ProgressBarUpdate.Minimum = 0
+                        ProgressBarUpdate.Maximum = oFileInfoCollectionServer.Length()
+                        ProgressBarUpdate.Value = 0
+                        For j = 0 To oFileInfoCollectionServer.Length() - 1
+                            lblSetup.Text = "Copiando Arquivo ... " & oFileInfoServer.Name
+                            lblSetup.Refresh()
+
+                            ProgressBarUpdate.Value += 1
+                            ProgressBarUpdate.Refresh()
+                            grpBoxUpdate.Refresh()
+                            Application.DoEvents()
+
+                            oFileInfoServer = oFileInfoCollectionServer.GetValue(j)
+                            'MsgBox(oFileInfoServer.DirectoryName & "\" & oFileInfoServer.Name & " -> " & Application.StartupPath & "\" & oFileInfoServer.Name)
+                            System.IO.File.Copy(oFileInfoServer.DirectoryName & "\" & oFileInfoServer.Name, oFileInfoLocal.DirectoryName & "\" & oFileInfoServer.Name, True)
+                        Next
+                    End If
+                End If
+            Next
+
+            'Atualizar os Relatórios
+            DirLocal = New DirectoryInfo(Application.StartupPath & "\reports")
+            DirServer = New DirectoryInfo("\\192.168.2.1\publicos\App_SSVP\reports")
+
+            oFileInfoCollectionLocal = DirLocal.GetFiles("*.rpt")
+
+            'Ler cada arquivo RPT do diretório do Servidor
+            For i = 0 To oFileInfoCollectionLocal.Length() - 1
+                oFileInfoLocal = oFileInfoCollectionLocal.GetValue(i)
+                'Ler o Arquivo no servidor
+                oFileInfoCollectionServer = DirServer.GetFiles(oFileInfoLocal.Name)
+                If oFileInfoCollectionServer.Length() > 0 Then 'Verificar se foi encontrado
+                    oFileInfoServer = oFileInfoCollectionServer.GetValue(0)
+
+                    'Comparar a data de criação
+                    If oFileInfoServer.LastWriteTime <> oFileInfoLocal.LastWriteTime Then
+                        'MsgBox("Atualizar")
+                        If Not bUpdate Then
+                            bUpdate = MsgBox("Deseja atualizar o sistema da SSVP agora?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = vbYes
+                            If Not bUpdate Then
+                                Exit Sub
+                            End If
+                        End If
+
+                        'Atualizar Arquivos
+                        'Separar o nome do arquivo, sem extensão
+                        nPos = InStr(1, oFileInfoLocal.Name, ".", vbTextCompare)
+                        sFileName = Microsoft.VisualBasic.Left(oFileInfoLocal.Name, nPos - 1)
+
+                        'Ler os Arquivos do módulo no servidor
+                        oFileInfoCollectionServer = DirServer.GetFiles(sFileName & "*.*")
+
+                        'carregar o Painel de Acompanhamento
+                        grpBoxUpdate.Visible = True
+
+                        ProgressBarUpdate.Minimum = 0
+                        ProgressBarUpdate.Maximum = oFileInfoCollectionServer.Length()
+                        ProgressBarUpdate.Value = 0
+                        For j = 0 To oFileInfoCollectionServer.Length() - 1
+                            lblSetup.Text = "Copiando Arquivo ... " & oFileInfoServer.Name
+                            lblSetup.Refresh()
+
+                            ProgressBarUpdate.Value += 1
+                            ProgressBarUpdate.Refresh()
+                            grpBoxUpdate.Refresh()
+                            Application.DoEvents()
+
+                            oFileInfoServer = oFileInfoCollectionServer.GetValue(j)
+                            'MsgBox(oFileInfoServer.DirectoryName & "\" & oFileInfoServer.Name & " -> " & Application.StartupPath & "\" & oFileInfoServer.Name)
+                            System.IO.File.Copy(oFileInfoServer.DirectoryName & "\" & oFileInfoServer.Name, oFileInfoLocal.DirectoryName & "\" & oFileInfoServer.Name, True)
+                        Next
+                    End If
+                End If
+            Next
+
+        End If
         grpBoxUpdate.Visible = False
 
         'MsgBox("Seu Sistema está atualizado !")
 
     End Sub
 
+    Private Sub Manual_Click(sender As Object, e As EventArgs) Handles Manual.Click
+
+        Process.Start(Application.ProductName & ".pdf")
+
+    End Sub
+
+    Private Sub Sobre_Click(sender As Object, e As EventArgs) Handles Sobre.Click
+        Dim frmSobre As frmSobre = New frmSobre
+
+        'frmSobre.MdiParent = Me
+        frmSobre.Text = Sobre.Text
+        frmSobre.Show()
+    End Sub
 End Class

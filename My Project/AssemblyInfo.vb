@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Desktop")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Desktop")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
+<Assembly: AssemblyTitle("DESKTOP")> 
+<Assembly: AssemblyDescription("Sistema Gerencial da SSVP. Este Módulo Principal permite o acesso aos módulos gerencials do CNB.")> 
+<Assembly: AssemblyCompany("SSVP - Sociedade São Vicente de Paulo")> 
+<Assembly: AssemblyProduct("DESKTOP")> 
+<Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

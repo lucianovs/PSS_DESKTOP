@@ -45,6 +45,9 @@ Partial Class frmBrowse
         '
         'ListView_Browse
         '
+        Me.ListView_Browse.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListView_Browse.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ListView_Browse.FullRowSelect = True
         Me.ListView_Browse.GridLines = True
@@ -58,6 +61,7 @@ Partial Class frmBrowse
         '
         'btnSalvar
         '
+        Me.btnSalvar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSalvar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnSalvar.BackgroundImage = CType(resources.GetObject("btnSalvar.BackgroundImage"), System.Drawing.Image)
         Me.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -102,15 +106,18 @@ Partial Class frmBrowse
         '
         'txtValorCondicao
         '
+        Me.txtValorCondicao.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtValorCondicao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtValorCondicao.Location = New System.Drawing.Point(380, 15)
         Me.txtValorCondicao.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtValorCondicao.Name = "txtValorCondicao"
-        Me.txtValorCondicao.Size = New System.Drawing.Size(238, 22)
+        Me.txtValorCondicao.Size = New System.Drawing.Size(229, 22)
         Me.txtValorCondicao.TabIndex = 5
         '
         'btnImprimir
         '
+        Me.btnImprimir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnImprimir.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnImprimir.BackgroundImage = CType(resources.GetObject("btnImprimir.BackgroundImage"), System.Drawing.Image)
         Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -123,18 +130,21 @@ Partial Class frmBrowse
         '
         'grbFiltro
         '
+        Me.grbFiltro.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grbFiltro.Controls.Add(Me.txtValorCondicao)
         Me.grbFiltro.Controls.Add(Me.cbCondicao)
         Me.grbFiltro.Controls.Add(Me.cbCampo)
         Me.grbFiltro.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.grbFiltro.Location = New System.Drawing.Point(57, 5)
         Me.grbFiltro.Name = "grbFiltro"
-        Me.grbFiltro.Size = New System.Drawing.Size(701, 44)
+        Me.grbFiltro.Size = New System.Drawing.Size(615, 44)
         Me.grbFiltro.TabIndex = 7
         Me.grbFiltro.TabStop = False
         '
         'btnIncluir
         '
+        Me.btnIncluir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnIncluir.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnIncluir.BackgroundImage = CType(resources.GetObject("btnIncluir.BackgroundImage"), System.Drawing.Image)
         Me.btnIncluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -147,6 +157,7 @@ Partial Class frmBrowse
         '
         'btnExcluir
         '
+        Me.btnExcluir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExcluir.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnExcluir.BackgroundImage = CType(resources.GetObject("btnExcluir.BackgroundImage"), System.Drawing.Image)
         Me.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -159,6 +170,7 @@ Partial Class frmBrowse
         '
         'btnAlterar
         '
+        Me.btnAlterar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAlterar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnAlterar.BackgroundImage = CType(resources.GetObject("btnAlterar.BackgroundImage"), System.Drawing.Image)
         Me.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -171,6 +183,7 @@ Partial Class frmBrowse
         '
         'btnClear
         '
+        Me.btnClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnClear.BackgroundImage = CType(resources.GetObject("btnClear.BackgroundImage"), System.Drawing.Image)
         Me.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -183,6 +196,7 @@ Partial Class frmBrowse
         '
         'btnAnterior
         '
+        Me.btnAnterior.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAnterior.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnAnterior.BackgroundImage = CType(resources.GetObject("btnAnterior.BackgroundImage"), System.Drawing.Image)
         Me.btnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -195,6 +209,7 @@ Partial Class frmBrowse
         '
         'btnProximo
         '
+        Me.btnProximo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnProximo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnProximo.BackgroundImage = CType(resources.GetObject("btnProximo.BackgroundImage"), System.Drawing.Image)
         Me.btnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -207,6 +222,7 @@ Partial Class frmBrowse
         '
         'lblRegistros
         '
+        Me.lblRegistros.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblRegistros.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lblRegistros.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRegistros.Location = New System.Drawing.Point(759, 308)

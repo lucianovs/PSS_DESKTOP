@@ -234,8 +234,9 @@ Partial Class Parametros
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtConnectString)
         Me.Controls.Add(Me.lblStrConexao)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Parametros"
-        Me.Text = "Parametros"
+        Me.Text = "Configurações"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)

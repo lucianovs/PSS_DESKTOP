@@ -31,6 +31,19 @@ Partial Class mdiDesktop
         Me.ProgressBarUpdate = New System.Windows.Forms.ProgressBar()
         Me.treeview_Mural = New System.Windows.Forms.TreeView()
         Me.ImageList_Mural = New System.Windows.Forms.ImageList(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuConfiguracoes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.menuCadastroDeGrupos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuUsuarios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuPermissao_Acesso = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlterarSenhaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.timerSetup = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Manual = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Sobre = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnUnidades = New System.Windows.Forms.Button()
         Me.btnTesouraria = New System.Windows.Forms.Button()
         Me.btnProtocolo = New System.Windows.Forms.Button()
@@ -42,19 +55,9 @@ Partial Class mdiDesktop
         Me.btnControle_de_Boletins = New System.Windows.Forms.Button()
         Me.btnContribuicoes = New System.Windows.Forms.Button()
         Me.btnContas_a_Pagar = New System.Windows.Forms.Button()
-        Me.btnColaboradores = New System.Windows.Forms.Button()
+        Me.btnAssociados = New System.Windows.Forms.Button()
         Me.btnCenso = New System.Windows.Forms.Button()
         Me.btnCompras = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuConfiguracoes = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SairToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.menuCadastroDeGrupos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuUsuarios = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuPermissao_Acesso = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AlterarSenhaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.timerSetup = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.grpBoxUpdate.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -120,6 +123,81 @@ Partial Class mdiDesktop
         Me.ImageList_Mural.Images.SetKeyName(1, "Ball yellow.png")
         Me.ImageList_Mural.Images.SetKeyName(2, "Ball Blue.png")
         Me.ImageList_Mural.Images.SetKeyName(3, "cmd_Direita.png")
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfiguraçõesToolStripMenuItem, Me.menuConfiguracoes, Me.SairToolStripMenuItem1, Me.ToolStripMenuItem1, Me.menuCadastroDeGrupos, Me.menuUsuarios, Me.menuPermissao_Acesso, Me.AlterarSenhaToolStripMenuItem, Me.ToolStripMenuItem2, Me.Manual, Me.Sobre})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(219, 254)
+        '
+        'ConfiguraçõesToolStripMenuItem
+        '
+        Me.ConfiguraçõesToolStripMenuItem.Name = "ConfiguraçõesToolStripMenuItem"
+        Me.ConfiguraçõesToolStripMenuItem.Size = New System.Drawing.Size(218, 24)
+        Me.ConfiguraçõesToolStripMenuItem.Text = "Configurações"
+        '
+        'menuConfiguracoes
+        '
+        Me.menuConfiguracoes.Name = "menuConfiguracoes"
+        Me.menuConfiguracoes.Size = New System.Drawing.Size(218, 24)
+        Me.menuConfiguracoes.Text = "Parâmetros"
+        '
+        'SairToolStripMenuItem1
+        '
+        Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
+        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(218, 24)
+        Me.SairToolStripMenuItem1.Text = "Sair"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(215, 6)
+        '
+        'menuCadastroDeGrupos
+        '
+        Me.menuCadastroDeGrupos.Name = "menuCadastroDeGrupos"
+        Me.menuCadastroDeGrupos.Size = New System.Drawing.Size(218, 24)
+        Me.menuCadastroDeGrupos.Text = "Cadastro de Grupos"
+        '
+        'menuUsuarios
+        '
+        Me.menuUsuarios.Name = "menuUsuarios"
+        Me.menuUsuarios.Size = New System.Drawing.Size(218, 24)
+        Me.menuUsuarios.Text = "Cadastro de Usuários"
+        '
+        'menuPermissao_Acesso
+        '
+        Me.menuPermissao_Acesso.Name = "menuPermissao_Acesso"
+        Me.menuPermissao_Acesso.Size = New System.Drawing.Size(218, 24)
+        Me.menuPermissao_Acesso.Text = "Permissão e Acesso"
+        '
+        'AlterarSenhaToolStripMenuItem
+        '
+        Me.AlterarSenhaToolStripMenuItem.Name = "AlterarSenhaToolStripMenuItem"
+        Me.AlterarSenhaToolStripMenuItem.Size = New System.Drawing.Size(218, 24)
+        Me.AlterarSenhaToolStripMenuItem.Text = "Alterar Senha"
+        '
+        'timerSetup
+        '
+        Me.timerSetup.Interval = 500
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(215, 6)
+        '
+        'Manual
+        '
+        Me.Manual.Name = "Manual"
+        Me.Manual.Size = New System.Drawing.Size(218, 24)
+        Me.Manual.Text = "Manual"
+        '
+        'Sobre
+        '
+        Me.Sobre.Image = Global.Desktop.My.Resources.Resources.Logo_SSVP
+        Me.Sobre.Name = "Sobre"
+        Me.Sobre.Size = New System.Drawing.Size(218, 24)
+        Me.Sobre.Text = "Sobre"
         '
         'btnUnidades
         '
@@ -275,19 +353,20 @@ Partial Class mdiDesktop
         Me.btnContas_a_Pagar.UseVisualStyleBackColor = True
         Me.btnContas_a_Pagar.Visible = False
         '
-        'btnColaboradores
+        'btnAssociados
         '
-        Me.btnColaboradores.AllowDrop = True
-        Me.btnColaboradores.BackgroundImage = CType(resources.GetObject("btnColaboradores.BackgroundImage"), System.Drawing.Image)
-        Me.btnColaboradores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnColaboradores.FlatAppearance.BorderSize = 0
-        Me.btnColaboradores.Location = New System.Drawing.Point(742, 207)
-        Me.btnColaboradores.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnColaboradores.Name = "btnColaboradores"
-        Me.btnColaboradores.Size = New System.Drawing.Size(123, 79)
-        Me.btnColaboradores.TabIndex = 22
-        Me.btnColaboradores.UseVisualStyleBackColor = True
-        Me.btnColaboradores.Visible = False
+        Me.btnAssociados.AllowDrop = True
+        Me.btnAssociados.BackColor = System.Drawing.SystemColors.Control
+        Me.btnAssociados.BackgroundImage = Global.Desktop.My.Resources.Resources.Associado
+        Me.btnAssociados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnAssociados.FlatAppearance.BorderSize = 0
+        Me.btnAssociados.Location = New System.Drawing.Point(742, 207)
+        Me.btnAssociados.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAssociados.Name = "btnAssociados"
+        Me.btnAssociados.Size = New System.Drawing.Size(123, 79)
+        Me.btnAssociados.TabIndex = 22
+        Me.btnAssociados.UseVisualStyleBackColor = False
+        Me.btnAssociados.Visible = False
         '
         'btnCenso
         '
@@ -317,63 +396,6 @@ Partial Class mdiDesktop
         Me.btnCompras.UseVisualStyleBackColor = True
         Me.btnCompras.Visible = False
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfiguraçõesToolStripMenuItem, Me.menuConfiguracoes, Me.SairToolStripMenuItem1, Me.ToolStripMenuItem1, Me.menuCadastroDeGrupos, Me.menuUsuarios, Me.menuPermissao_Acesso, Me.AlterarSenhaToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(219, 178)
-        '
-        'ConfiguraçõesToolStripMenuItem
-        '
-        Me.ConfiguraçõesToolStripMenuItem.Name = "ConfiguraçõesToolStripMenuItem"
-        Me.ConfiguraçõesToolStripMenuItem.Size = New System.Drawing.Size(218, 24)
-        Me.ConfiguraçõesToolStripMenuItem.Text = "Configurações"
-        '
-        'menuConfiguracoes
-        '
-        Me.menuConfiguracoes.Name = "menuConfiguracoes"
-        Me.menuConfiguracoes.Size = New System.Drawing.Size(218, 24)
-        Me.menuConfiguracoes.Text = "Parâmetros"
-        '
-        'SairToolStripMenuItem1
-        '
-        Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
-        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(218, 24)
-        Me.SairToolStripMenuItem1.Text = "Sair"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(215, 6)
-        '
-        'menuCadastroDeGrupos
-        '
-        Me.menuCadastroDeGrupos.Name = "menuCadastroDeGrupos"
-        Me.menuCadastroDeGrupos.Size = New System.Drawing.Size(218, 24)
-        Me.menuCadastroDeGrupos.Text = "Cadastro de Grupos"
-        '
-        'menuUsuarios
-        '
-        Me.menuUsuarios.Name = "menuUsuarios"
-        Me.menuUsuarios.Size = New System.Drawing.Size(218, 24)
-        Me.menuUsuarios.Text = "Cadastro de Usuários"
-        '
-        'menuPermissao_Acesso
-        '
-        Me.menuPermissao_Acesso.Name = "menuPermissao_Acesso"
-        Me.menuPermissao_Acesso.Size = New System.Drawing.Size(218, 24)
-        Me.menuPermissao_Acesso.Text = "Permissão e Acesso"
-        '
-        'AlterarSenhaToolStripMenuItem
-        '
-        Me.AlterarSenhaToolStripMenuItem.Name = "AlterarSenhaToolStripMenuItem"
-        Me.AlterarSenhaToolStripMenuItem.Size = New System.Drawing.Size(218, 24)
-        Me.AlterarSenhaToolStripMenuItem.Text = "Alterar Senha"
-        '
-        'timerSetup
-        '
-        Me.timerSetup.Interval = 500
-        '
         'mdiDesktop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -390,7 +412,7 @@ Partial Class mdiDesktop
         Me.Controls.Add(Me.btnControle_de_Boletins)
         Me.Controls.Add(Me.btnContribuicoes)
         Me.Controls.Add(Me.btnContas_a_Pagar)
-        Me.Controls.Add(Me.btnColaboradores)
+        Me.Controls.Add(Me.btnAssociados)
         Me.Controls.Add(Me.btnCenso)
         Me.Controls.Add(Me.btnCompras)
         Me.Controls.Add(Me.GroupBox1)
@@ -418,7 +440,7 @@ Partial Class mdiDesktop
     Friend WithEvents btnControle_de_Boletins As System.Windows.Forms.Button
     Friend WithEvents btnContribuicoes As System.Windows.Forms.Button
     Friend WithEvents btnContas_a_Pagar As System.Windows.Forms.Button
-    Friend WithEvents btnColaboradores As System.Windows.Forms.Button
+    Friend WithEvents btnAssociados As System.Windows.Forms.Button
     Friend WithEvents btnCenso As System.Windows.Forms.Button
     Friend WithEvents btnCompras As System.Windows.Forms.Button
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
@@ -436,5 +458,8 @@ Partial Class mdiDesktop
     Friend WithEvents grpBoxUpdate As System.Windows.Forms.GroupBox
     Friend WithEvents lblSetup As System.Windows.Forms.Label
     Friend WithEvents ProgressBarUpdate As System.Windows.Forms.ProgressBar
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents Manual As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Sobre As System.Windows.Forms.ToolStripMenuItem
 
 End Class
